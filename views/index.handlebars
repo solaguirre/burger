@@ -1,1 +1,43 @@
-<h1>Burgers</h1>
+<h1 class="text-center">Burgers</h1>
+
+<div class="text-center">
+    <img alt="Burger" src="/assets/burgerimage.jpg" class="img-fluid">
+</div>
+
+<h2>Devoured Burgers!</h2>
+
+<ul>
+    {{#each burgers }}
+    {{#if  devoured }}
+    {{> burgers/burger=block devoured=true }}
+    {{/if }}
+    {{/each }}
+
+</ul>
+
+<h2>Non-Devoured Burgers!</h2>
+
+<ul>
+    {{#each burgers }}
+    {{#unless  devoured }}
+    {{> burgers/burger-block devoured = false }}
+    {{/unless }}
+    {{/each }}
+
+
+
+</ul>
+
+{{!-- add burger --}}
+
+<h2>Add a burger here</h2>
+
+<form class="create=form">
+    <div class="form-group">
+        <label for="burger">Burger:</label>
+        <input type="text" id="burger" name="burger_name">
+
+        <button type="submit" class="btn btn-primary">Add Burger</button>
+    </div>
+
+</form>
