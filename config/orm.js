@@ -12,7 +12,7 @@ const connection = require("./connection.js");
 //     return array.toString();
 // }
 
-// will communicate with
+// will communicate with db
 const orm = {
 
     selectAll: function (tableInput, cb){
